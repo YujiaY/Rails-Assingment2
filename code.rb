@@ -55,7 +55,10 @@ coursecpp2 = Course.create(name:'cpp')
 usercpp = coursecpp2.users.create(name:'cppuser')
 
 
+
+### manually generate join table!
 rails g migration CreateJoinTableCourseuser course user
+rails g migration CreateJoinTableContentCourse content course
 
 
 class CreateUsersCoursesJoinTable < ActiveRecord::Migration[5.0]
