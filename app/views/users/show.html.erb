@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<% content_for :admin do %>
+  <%= "Fake news:  You are an Admin!" %>
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+ 
+<% end %>
+
+<% content_for :lecturer do %>
+  <%= "Fake news:  You are an Lecturer!" %>
+<% end %>
+
+<% content_for :student do %>
+  <%= "Fake news:  You are an Student!" %>
+<% end %>
+

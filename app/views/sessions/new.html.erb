@@ -1,0 +1,19 @@
+<h1>Authentication Sample</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+
+<% flash.each do |message_type, message| %>
+  <div><%= message %></div>
+  <%end%>
+
+<div>
+	<%= form_for :session, url: login_path do |f| %>
+	  <%= f.label :email %>
+	  <%= f.email_field :email %>
+
+	  <%= f.label :password %>
+	  <%= f.password_field :password %>
+
+	  <%= f.submit "Log in"%>
+
+	<% end %>  
+</div>  

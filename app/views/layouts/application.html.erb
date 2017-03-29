@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>S9@AuthenticationSample</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <% if logged_in? %>
+    <h1>Welcome, <%= current_user.name %>!</h1>
+    <p>
+    <% if current_user.name == "lucas" %>
+  		<%= yield :admin %>
+  	
+  	<% elsif  current_user.name.downcase.include? "s" %>
+  		<%= yield :student %>
+  	      
+  	<% elsif current_user.name.downcase.include? "l" %>
+  		<%= yield :lecturer %>
+  	<% end %>
+    </p>
+
+      <%= link_to "Log out", logout_path, method: :delete %>
+    <% else %>
+      <%= link_to "log in", login_path %>
+    <% end %>
+
+
+
+    <%= yield %>
+  </body>
+</html>
