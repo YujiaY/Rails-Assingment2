@@ -87,3 +87,19 @@ class CreateAssembliesPartsJoinTable < ActiveRecord::Migration[5.0]
     end
   end
 end
+
+
+
+rails g migration AddRoleToUsers role:string
+
+
+rails g migration ChangeColumnRoleDefaultToUsers :users, :role, from: nil, to: "student"
+
+rake db:migrate
+
+#Go to User.controller
+
+    def user_params
+      params.require(:user).permit(:name,:role)
+    end
+end
