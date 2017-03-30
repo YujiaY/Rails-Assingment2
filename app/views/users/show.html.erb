@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 
-
-
 <% content_for :admin do %>
   <%= "Fake news:  You are an Admin!" %>
 <p>
@@ -25,11 +23,50 @@
  
 <% end %>
 
+
+
 <% content_for :lecturer do %>
   <%= "Fake news:  You are an Lecturer!" %>
+
+  <p>
+  <strong>Name:</strong>
+  <%= current_user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= current_user.password_digest %>
+</p>
+<br>
+<%= link_to 'Edit', edit_user_path(current_user) %> |<%= link_to 'Back', users_path %>
+
 <% end %>
+
+
 
 <% content_for :student do %>
   <%= "Fake news:  You are an Student!" %>
+
+  <p>
+  <strong>Name:</strong>
+  <%= current_user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= current_user.password_digest %>
+</p>
+<br>
+<%= link_to 'Edit', edit_user_path(current_user) %> |<%= link_to 'Back', users_path %>
 <% end %>
 

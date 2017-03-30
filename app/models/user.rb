@@ -9,4 +9,5 @@ class User < ApplicationRecord
 	 has_secure_password
 	 validates :password, presence: true, length: {minimum: 4}
 	 
+	has_and_belongs_to_many :courses
 end

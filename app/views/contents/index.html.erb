@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+
+
+<% content_for :admin do %>
+  <%= "Fake news:  You are an Admin!" %>
+<h1>Contents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |content| %>
+      <tr>
+        <td><%= content.name %></td>
+        <td><%= link_to 'Show', content %></td>
+        <td><%= link_to 'Edit', edit_content_path(content) %></td>
+        <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Content', new_content_path %>
+
+<% end %>
+
+
+<% content_for :lecturer do %>
+  <P><%= "Fake news:  You are an Lecturer!" %></P>
+  <p><%= "Fake news:  This is the Courses Index for Lecturer!" %></p>
+  <h1>Contents</h1>
+  <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |content| %>
+      <tr>
+        <td><%= content.name %></td>
+        <td><%= link_to 'Show', content %></td>
+        <td><%= link_to 'Edit', edit_content_path(content) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>
+
+<% content_for :student do %>
+  <p><%= "Fake news:  You are an Student!" %></p>
+  <p><%= "Fake news:  This is the Courses Index for Student!" %></p>
+    <h1>Contents</h1>
+  <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |content| %>
+      <tr>
+        <td><%= content.name %></td>
+        <td><%= link_to 'Show', content %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% end %>

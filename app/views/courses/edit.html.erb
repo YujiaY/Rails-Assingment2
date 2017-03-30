@@ -1,0 +1,35 @@
+
+
+<% content_for :admin do %>
+  <%= "Fake news:  You are an Admin!" %>
+<h1>Editing Course</h1>
+
+<%= render 'form', course: @course %>
+
+<%= link_to 'Show', @course %> |
+<%= link_to 'Back', courses_path %>
+
+<% end %>
+
+
+<% content_for :lecturer do %>
+  <P><%= "Fake news:  You are an Lecturer!" %></P>
+  <p><%= "Fake news:  This is the Courses Editing for Lecturer!" %></p>
+  <h1>Editing Course</h1>
+
+<%= render 'form', course: @course %>
+
+<%= link_to 'Show', @course %> |
+<%= link_to 'Back', courses_path %>
+
+<% end %>
+
+<% content_for :student do %>
+  <p><%= "Fake news:  You are an Student!" %></p>
+  <p><%= "Fake news:  This is the Courses Editing for Student!" %></p>
+  <P><%= "So there is nothing here. T_T & LOL" %></P>
+  
+<%= link_to 'Show', @course %> |
+<%= link_to 'Back', courses_path %>
+
+<% end %>

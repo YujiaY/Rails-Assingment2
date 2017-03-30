@@ -1,6 +1,43 @@
+
+<% content_for :admin do %>
+  <%= "Fake news:  You are an Admin!" %>
+
 <h1>Editing User</h1>
 
 <%= render 'form', user: @user %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+
+<br>
+
+
+<% end %>
+
+<% content_for :lecturer do %>
+  <P><%= "Fake news:  You are an Lecturer!" %></P>
+  <p><%= "Fake news:  This is the User Edit Page for Lecturer!" %></p>
+  <P><%= "So there is nothing here. T_T & LOL" %></P>
+
+  <h1>Editing Yourself's Info </h1>
+
+<%= render 'form', user: current_user %>
+
+<%= link_to 'Show', current_user %> |
+ 
+  <%= link_to 'Back-tobefix', users_path %>
+<% end %>
+
+<% content_for :student do %>
+  <p><%= "Fake news:  You are an Student!" %></p>
+  <p><%= "Fake news:  This is the User Edit Page for Student!" %></p>
+  <P><%= "So there is nothing here. T_T & LOL" %></P>
+
+<h1>Editing Yourself's Info </h1>
+
+<%= render 'form', user: current_user %>
+
+<%= link_to 'Show', current_user %> |
+ 
+<%= link_to 'Back-tobefix', users_path %>
+<% end %>

@@ -36,11 +36,45 @@
 
 <% content_for :lecturer do %>
   <P><%= "Fake news:  You are an Lecturer!" %></P>
-  <p><%= "Fake news:  This is the index for Lecturer!" %></p>
-  
+  <p><%= "Fake news:  This is the User index for Lecturer!" %></p>
+<p>
+  <strong>Name:</strong>
+  <%= current_user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= current_user.password_digest %>
+</p>
+ <%= link_to 'Show', current_user %>|
+       <%= link_to 'Edit', edit_user_path(current_user) %>  
 <% end %>
 
 <% content_for :student do %>
   <p><%= "Fake news:  You are an Student!" %></p>
-  <p><%= "Fake news:  This is the index for Student!" %></p>
+  <p><%= "Fake news:  This is the User index for Student!" %></p>
+  <br>
+    <p>
+  <strong>Name:</strong>
+  <%= current_user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= current_user.password_digest %>
+</p>
+
+ <%= link_to 'Show', current_user %>|
+       <%= link_to 'Edit', edit_user_path(current_user) %>
+
 <% end %>
