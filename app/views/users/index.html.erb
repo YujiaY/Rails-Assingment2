@@ -9,6 +9,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Role</th>
       <th>Email</th>
       <th>Password digest</th>
       <th colspan="3"></th>
@@ -19,7 +20,9 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
+        <td><%= user.role %></td>
         <td><%= user.email %></td>
+
         <td><%= user.password_digest %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
@@ -63,6 +66,12 @@
   <strong>Name:</strong>
   <%= current_user.name %>
 </p>
+
+    <p>
+  <strong>Role:</strong>
+  <%= current_user.role %>
+</p>
+
 
 <p>
   <strong>Email:</strong>

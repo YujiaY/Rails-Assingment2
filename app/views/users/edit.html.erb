@@ -21,7 +21,7 @@
 
   <h1>Editing Yourself's Info </h1>
 
-<%= render 'form', user: current_user %>
+<%= render 'formfornonadmin', user: current_user %>
 
 <%= link_to 'Show', current_user %> |
  
@@ -35,8 +35,9 @@
 
 <h1>Editing Yourself's Info </h1>
 
-<%= render 'form', user: current_user %>
+<%= render 'formfornonadmin', user: current_user %>
 
+<p><%= "Or Call the Admin. --To be fixed" %></p>
 <%= link_to 'Show', current_user %> |
  
 <%= link_to 'Back-tobefix', users_path %>

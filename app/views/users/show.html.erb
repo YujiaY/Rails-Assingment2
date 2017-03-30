@@ -9,6 +9,11 @@
 </p>
 
 <p>
+  <strong>Role:</strong>
+  <%= @user.role %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
@@ -34,6 +39,11 @@
 </p>
 
 <p>
+  <strong>Role:</strong>
+  <%= current_user.role %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= current_user.email %>
 </p>
@@ -51,11 +61,22 @@
 
 <% content_for :student do %>
   <%= "Fake news:  You are an Student!" %>
+  <br>
+    <% if current_user != User.find(params[:id]) %>
+      <strong><%= "Do not sneak around please."%></strong>
+      <strong><%= "Return to your own infomation page."%></strong>
 
+    <% end %>
   <p>
   <strong>Name:</strong>
   <%= current_user.name %>
 </p>
+
+<p>
+  <strong>Role:</strong>
+  <%= current_user.role %>
+</p>
+
 
 <p>
   <strong>Email:</strong>
@@ -67,6 +88,11 @@
   <%= current_user.password_digest %>
 </p>
 <br>
+
+
+
+<br>
+
 <%= link_to 'Edit', edit_user_path(current_user) %> |<%= link_to 'Back', users_path %>
 <% end %>
 

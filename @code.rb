@@ -45,3 +45,19 @@ userA.authenticate("foobar")
   	      	<%= "Fake news:  You are a Lecturer!" %>
   	<% end %>
     </p>
+
+ ###
+
+rails g migration AddRoleToUsers role:string
+
+
+rails g migration ChangeColumnRoleDefaultToUsers :users, :role, from: nil, to: "student"
+
+rake db:migrate
+
+#Go to User.controller
+
+    def user_params
+      params.require(:user).permit(:name,:role)
+    end
+end

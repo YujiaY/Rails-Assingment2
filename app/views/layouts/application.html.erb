@@ -13,13 +13,13 @@
     <% if logged_in? %>
     <h1>Welcome, <%= current_user.name %>!</h1>
     <p>
-    <% if current_user.name == "lucas" %>
+    <% if current_user.role == "admin" %>
   		<%= yield :admin %>
   	
-  	<% elsif  current_user.name.downcase.include? "s" %>
+  	<% elsif  current_user.role.downcase == "student" %>
   		<%= yield :student %>
   	      
-  	<% elsif current_user.name.downcase.include? "l" %>
+  	<% elsif current_user.role.downcase.include? "lecturer" %>
   		<%= yield :lecturer %>
   	<% end %>
     </p>
